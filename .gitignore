@@ -6,3 +6,6 @@
 .vscode/extensions.json
 .vscode/settings.json
 src/data.h
+.gitignore
+.travis.yml
+plateformio.ini
