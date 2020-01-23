@@ -74,8 +74,8 @@ void allume_led(const int led)
 //////////////////////////////////////////////// Broker mqtt  ///////////////////////////
 const char *MQTT_SERVEUR = "192.168.1.101";
 #define MQTT_PORT 1883
-#define MQTT_USER "frucot"
-#define MQTT_PASSWORD "jekyll5832"
+#define MQTT_USER MqttUser
+#define MQTT_PASSWORD MqttPassword
 // Les topics
 const char MQTT_SERIAL_PUBLISH_CH[] = "sensors/office/temperature/01";
 const char MQTT_SERIAL_RECEIVER_CH[] = "sensors/office/temperature/01_RX";
