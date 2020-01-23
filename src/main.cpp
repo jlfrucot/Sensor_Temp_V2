@@ -17,9 +17,6 @@
   * with this program. If not, see <http://www.gnu.org/licenses/>.
   */
 
-
-/* @todo Faire des buffers pour JsonDoc des buffers temporaires
-*/
 #include <Arduino.h>
 
 #include <WiFi.h>
