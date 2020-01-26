@@ -36,7 +36,9 @@ Ce projet est sous GPL :
   
 ## Credits
 
- OTAWebUpdater.ino Example from ArduinoOTA Library
+ OTA
+ 
+ WebUpdater.ino Example from ArduinoOTA Library
  
  Rui Santos 
  
