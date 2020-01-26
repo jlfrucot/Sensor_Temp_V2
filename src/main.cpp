@@ -17,6 +17,13 @@
   * with this program. If not, see <http://www.gnu.org/licenses/>.
   */
 
+ /* Crédits Remerciements
+  OTA
+    OTAWebUpdater.ino Example from ArduinoOTA Library
+    Rui Santos 
+    Complete Project Details https://randomnerdtutorials.com
+ */
+
 #include <Arduino.h>
 
 #include <WiFi.h>

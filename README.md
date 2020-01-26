@@ -34,3 +34,10 @@ Ce projet est sous GPL :
   * You should have received a copy of the GNU General Public License along
   * with this program. If not, see <http://www.gnu.org/licenses/>.
   
+## Credits
+
+ OTAWebUpdater.ino Example from ArduinoOTA Library
+ 
+ Rui Santos 
+ 
+ Complete Project Details https://randomnerdtutorials.com
