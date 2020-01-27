@@ -43,6 +43,11 @@ public:
     */
     float getAverageTemp();
     /*
+    Retourne l'humidité courante lue par update()
+    */
+    float getCurrentHumidity();
+
+    /*
         Lit la tension sur la broche m_pin et la convertit en °C
     */
     void update();
@@ -59,6 +64,7 @@ private:
 
     unsigned int m_nbValeurs;        // Nombre d'appels valides à update pour le calcul de la moyenne
     float        m_currentTemp;      // La dernière température lue
+    float        m_currentHumidity;         // Dernière valeur du taux d'humidité
     float        m_averageTemp;      // La température moyenne depuis le dernier appel à getAverageTemp()
 };
 #endif

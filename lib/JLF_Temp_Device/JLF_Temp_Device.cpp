@@ -44,6 +44,12 @@ float JLF_Temp_Device::getCurrentTemp()
     return m_currentTemp;
 }
 
+float  JLF_Temp_Device::getCurrentHumidity()
+{
+    m_currentHumidity = this->getHumidity();
+    return m_currentHumidity;
+}
+
 float JLF_Temp_Device::getAverageTemp()
 {
     m_nbValeurs = 0; // On remet les compteurs à zéro pour le calcul de la moyenne
@@ -52,7 +58,8 @@ float JLF_Temp_Device::getAverageTemp()
 
 void JLF_Temp_Device::update()
 {
-    m_currentTemp = getCurrentTemp();
+    getCurrentTemp();
+    getCurrentHumidity();
     if (!isnan(m_currentTemp))
     {
         m_nbValeurs++;                       // On a une mesure de plus à compter dans la moyenne

@@ -91,7 +91,7 @@ void setup_wifi();
 
 // Création d'un client MQTT
 PubSubClient MQTTClient(wifiClient);
-void publishData(float temp);
+void publishData(float temp,float humidity);
 void MQTTReceiver(char *topic, byte *payload, unsigned int length);
 void connectMQTT();
 StaticJsonDocument<200> jsonDoc; // Un buffer pour les publications MQTT
@@ -146,6 +146,7 @@ void setup()
 
   // init jsonDoc
   jsonDoc["temperature"] = 0.0;
+  jsonDoc["humidity"] = 0.0;
 
   // On démarre les compteurs de temps
   readTempTimer->start();
@@ -179,7 +180,8 @@ void loop()
   if (publishTimer->isTimeElapsed())
   {
     float temp = tempDevice->getAverageTemp();
-    publishData(temp); // Publication de la température
+    float humidity = tempDevice->getCurrentHumidity();
+    publishData(temp, humidity); // Publication de la température
 #if OUTPUT_SERIAL_PRINT
     Serial.print("30 s écoulées   température : ");
     Serial.println(temp);
@@ -250,10 +252,12 @@ void connectMQTT()
   }
 }
 
-void publishData(float temp)
+void publishData(float temp, float humidity)
 {
+  // On peuple le document json après l'avoir nettoyé
   jsonDoc.clear();
   jsonDoc["temperature"] = temp;
+  jsonDoc["humidity"] = humidity;
 
   if (!MQTTClient.connected())
   {
